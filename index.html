@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwila Kotati Mwansa · Biomedical Scientist</title>
+<meta name="description" content="Kwila Kotati Mwansa, biomedical scientist heading the Microbiology section at Livingstone University Teaching Hospital, an antimicrobial resistance surveillance site in Zambia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Monochrome lab: graph-paper ground, a Kirby-Bauer plate as the hero, then stats, a bench marquee, bento, timeline and an inverted contact panel. */
+:root{
+  --bg:#f3f3f2;          /* lab paper */
+  --surface:#ffffff;
+  --g50:#f8f8f7;
+  --g100:#ebebea;        /* silver */
+  --g200:#dcdcda;        /* pewter */
+  --g300:#c3c3c0;        /* ash */
+  --g400:#a3a3a0;
+  --g500:#7d7d7a;        /* slate, large text only */
+  --muted:#5f5f5c;       /* body copy, passes contrast */
+  --ink:#1b1b1a;         /* graphite */
+  --line:#dededc;
+  --grid:rgba(0,0,0,.045);
+  --agar0:#fbfbfa;--agar1:#e4e4e2;--lawn:#7c7c79;--shine:.6;
+  --shadow:0 24px 60px -32px rgba(0,0,0,.35);
+  --display:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"Geist","Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --radius:26px;
+  color-scheme:light;
+}
+/* dark palette: follows the device unless the visitor picked light; the switch sets data-theme */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#111111;--surface:#191919;--g50:#161616;--g100:#202020;--g200:#2a2a2a;--g300:#3a3a3a;--g400:#575757;--g500:#8e8e8e;--muted:#a9a9a9;--ink:#ededec;--line:#2a2a2a;--grid:rgba(255,255,255,.035);--shadow:0 24px 60px -30px rgba(0,0,0,.9);--agar0:#1c1c1c;--agar1:#121212;--lawn:#8a8a8a;--shine:.12;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#111111;--surface:#191919;--g50:#161616;--g100:#202020;--g200:#2a2a2a;--g300:#3a3a3a;--g400:#575757;--g500:#8e8e8e;--muted:#a9a9a9;--ink:#ededec;--line:#2a2a2a;--grid:rgba(255,255,255,.035);--shadow:0 24px 60px -30px rgba(0,0,0,.9);--agar0:#1c1c1c;--agar1:#121212;--lawn:#8a8a8a;--shine:.12;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;font-weight:400;
+  background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;
+  transition:background-color .35s ease,color .35s ease;
+}
+a{color:var(--ink)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1680px;margin:0 auto;padding-left:max(20px,5vw);padding-right:max(20px,5vw)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+
+/* scroll progress */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:20;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+
+/* nav */
+.nav{position:sticky;top:14px;z-index:10;margin-top:14px}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:15px;padding:6px 14px 6px 6px;border-radius:999px;
+  background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line)}
+.brand i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);font-style:normal;font-family:var(--display);font-size:16px}
+.nav ul{list-style:none;margin:0;padding:6px;display:flex;gap:2px;align-items:center;
+  background:color-mix(in srgb,var(--surface) 80%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--line);border-radius:999px;box-shadow:var(--shadow)}
+.nav a.lnk{display:block;padding:8px 16px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);transition:background .2s,color .2s}
+.nav a.lnk:hover,.nav a.lnk.on{background:var(--g100);color:var(--ink)}
+
+/* theme switch */
+.switch{position:relative;display:flex;align-items:center;width:64px;height:34px;border-radius:999px;border:1px solid var(--line);background:var(--g100);cursor:pointer;padding:0;margin-left:4px;color:var(--muted)}
+.switch svg{position:absolute;width:15px;height:15px;top:50%;transform:translateY(-50%)}
+.switch .sun{left:10px}.switch .moon{right:10px}
+.switch .knob{position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:var(--surface);box-shadow:0 2px 8px rgba(0,0,0,.25);transition:transform .35s cubic-bezier(.6,-.3,.3,1.4)}
+.switch.is-dark .knob{transform:translateX(30px);background:var(--ink)}
+
+/* hero */
+.hero{padding-block:64px 32px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:center;width:100%}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;color:var(--muted)}
+.kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 0 var(--g400);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ink) 40%,transparent)}70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,7.6vw,150px);line-height:.92;letter-spacing:-.025em;margin:0}
+h1 .row{display:block}
+h1 em{font-style:italic;color:var(--g500)}
+.pitch{font-size:clamp(18px,1.35vw,22px);max-width:54ch;margin:28px 0 0;color:var(--muted);font-weight:300}
+.pitch strong{color:var(--ink);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:500;font-size:15px;text-decoration:none;transition:transform .25s ease,background .25s ease,box-shadow .25s ease;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn svg{width:16px;height:16px}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.soft{background:var(--g100);color:var(--ink);border:1px solid var(--line)}
+.btn.line{border:1px solid var(--g300);color:var(--ink)}
+
+/* plate */
+.plate-wrap{position:relative;justify-self:center;width:min(clamp(320px,34vw,600px),100%);aspect-ratio:1}
+.plate{width:100%;height:100%;display:block;filter:drop-shadow(0 40px 50px rgba(0,0,0,.22))}
+.ring-text{transform-origin:200px 200px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.plate .rim{fill:var(--g100);stroke:var(--g300)}
+.plate .agar-0{stop-color:var(--agar0)}
+.plate .agar-1{stop-color:var(--agar1)}
+.plate .lawn{fill:var(--lawn);opacity:.7}
+.plate .clear{fill:url(#agar)}
+.plate .clear,.plate .zone{transform-box:fill-box;transform-origin:center;animation:grow 1.8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes grow{from{transform:scale(0)}}
+.plate .disc{fill:var(--surface);stroke:var(--g300)}
+.plate .zone{fill:none;stroke:var(--g500);stroke-width:.8;stroke-dasharray:2 3}
+.plate .lbl{font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;fill:var(--ink)}
+.plate .ring{font-family:var(--mono);font-size:9px;letter-spacing:.32em;fill:var(--g500)}
+.plate .shine{fill:url(#shine);opacity:var(--shine)}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px;color:var(--muted);animation:float 6s ease-in-out infinite}
+.chip b{font-family:var(--display);font-weight:400;font-size:26px;line-height:1;color:var(--ink)}
+.chip.c1{left:-4%;bottom:12%}
+.chip.c2{right:-2%;top:8%;animation-delay:-3s;background:var(--ink);color:var(--bg);border-color:transparent}
+.chip.c3{right:4%;bottom:2%;animation-delay:-1.5s}
+@keyframes float{50%{transform:translateY(-8px)}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:24px}
+.stat{padding:28px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(44px,4.6vw,76px);line-height:1;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14px}
+
+/* marquee */
+.marquee{overflow:hidden;padding-block:26px;border-bottom:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:48px;width:max-content;animation:slide 38s linear infinite}
+.track span{display:flex;align-items:center;gap:48px;font-family:var(--display);font-size:clamp(26px,2.4vw,40px);color:var(--g500);white-space:nowrap}
+.track span::after{content:"";width:10px;height:10px;border-radius:50%;border:1.5px solid var(--g400)}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding-block:clamp(64px,7vw,120px)}
+.band{background:color-mix(in srgb,var(--g100) 70%,transparent);border-block:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.head .mono{color:var(--muted);display:flex;align-items:center;gap:10px}
+.head .mono::before{content:"";width:24px;height:1px;background:var(--g400)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,4.8vw,80px);line-height:1;letter-spacing:-.02em;margin:0}
+h2 em{font-style:italic;color:var(--g500)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.about .big{font-family:var(--display);font-size:clamp(28px,2.6vw,42px);line-height:1.2;margin:0 0 22px}
+.about .big em{color:var(--g500)}
+.about .body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.about .body p{margin:0;color:var(--muted)}
+.facts{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.facts li{font-size:14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;color:var(--muted)}
+.facts li b{color:var(--ink);font-weight:500}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.card{position:relative;border-radius:var(--radius);padding:28px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:12px;min-width:0;overflow:hidden;isolation:isolate;transition:transform .3s ease,box-shadow .3s ease}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--ink) 9%,transparent),transparent 60%)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card:hover::before{opacity:1}
+.card .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--g100);border:1px solid var(--line)}
+.card .ico svg{width:22px;height:22px}
+.card h3{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.05;margin:4px 0 0}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card .n{position:absolute;top:24px;right:26px;color:var(--g400)}
+.b1{grid-column:span 4;background:var(--ink);color:var(--bg);border-color:transparent}
+.b1 p,.b1 .n{color:color-mix(in srgb,var(--bg) 72%,var(--ink))}
+.b1 .ico{background:color-mix(in srgb,var(--bg) 12%,var(--ink));border-color:transparent}
+.b1 h3{font-size:clamp(34px,3vw,48px)}
+.b1::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--bg) 14%,transparent),transparent 60%)}
+.b2{grid-column:span 2;background:var(--g200);border-color:transparent}
+.b3,.b4,.b5{grid-column:span 2}
+.b6{grid-column:span 6;display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,2fr);gap:28px;align-items:center;background:var(--g100)}
+.b1 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.b1 .pills span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);border-radius:999px;padding:5px 10px;color:color-mix(in srgb,var(--bg) 80%,var(--ink))}
+
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:18px}
+.timeline::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--g400),var(--line))}
+.job{position:relative;padding-left:48px}
+.job::before{content:"";position:absolute;left:4px;top:30px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:1.5px solid var(--g400)}
+.job.current::before{background:var(--ink);border-color:var(--ink);box-shadow:0 0 0 6px color-mix(in srgb,var(--ink) 12%,transparent)}
+.job .card{gap:6px}
+.job .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:baseline}
+.job .when{color:var(--muted)}
+.job h3{font-size:clamp(26px,2vw,34px)}
+.org{margin:0 0 10px;color:var(--muted);font-weight:500}
+.job ul{margin:0;padding-left:18px}
+.job li{margin-bottom:6px}
+.job li::marker{color:var(--g400)}
+.now{display:inline-block;background:var(--ink);color:var(--bg);border-radius:999px;padding:4px 10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em}
+.duties{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 40px}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 14px}
+.roles span{font-size:13px;border:1px solid var(--line);background:var(--g100);border-radius:999px;padding:5px 12px}
+
+/* education, training, languages */
+.three{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:48px}
+.edu{display:flex;flex-direction:column}
+.edu div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.edu div:last-child{border-bottom:1px solid var(--line)}
+.edu .yr{color:var(--muted);padding-top:6px}
+.edu b{display:block;font-family:var(--display);font-weight:400;font-size:23px;line-height:1.2}
+.edu span{color:var(--muted);font-size:14px}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;display:flex;align-items:center;gap:10px}
+.tags li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--g400)}
+.tags li:nth-child(2n){background:var(--g100)}
+.langs{display:flex;flex-direction:column;gap:18px}
+.lang .top{display:flex;justify-content:space-between;margin-bottom:8px;font-size:15px}
+.lang .top span{color:var(--muted)}
+.meter{height:6px;border-radius:999px;background:var(--g200);overflow:hidden}
+.meter i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--g400),var(--ink));border-radius:inherit;transform-origin:0 50%;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.sub{margin:40px 0 16px;font-family:var(--display);font-weight:400;font-size:30px}
+
+/* contact */
+.contact{position:relative;overflow:hidden;border-radius:44px;padding:clamp(36px,7vw,96px);background:var(--ink);color:var(--bg);
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;align-items:end}
+.contact::after{content:"";position:absolute;right:-12%;top:-40%;width:60%;aspect-ratio:1;border-radius:50%;
+  background:repeating-radial-gradient(circle,color-mix(in srgb,var(--bg) 10%,transparent) 0 1px,transparent 1px 22px);pointer-events:none}
+.contact h2{font-size:clamp(48px,6.5vw,112px)}
+.contact h2 em{color:color-mix(in srgb,var(--bg) 55%,var(--ink))}
+.contact p{margin:20px 0 0;max-width:46ch;color:color-mix(in srgb,var(--bg) 75%,var(--ink))}
+.contact .mono{color:color-mix(in srgb,var(--bg) 60%,var(--ink))}
+.contact .links{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.contact .links a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;border-radius:18px;text-decoration:none;color:var(--bg);
+  border:1px solid color-mix(in srgb,var(--bg) 20%,transparent);transition:background .25s,transform .25s}
+.contact .links a:hover{background:color-mix(in srgb,var(--bg) 10%,transparent);transform:translateX(4px)}
+.contact .links small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--bg) 60%,var(--ink))}
+.contact .links svg{width:20px;height:20px;flex:none}
+footer{padding-block:32px 44px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* reveal on scroll; content stays visible without JavaScript */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .meter i{transform:scaleX(0)}
+.js .in .meter i{transform:scaleX(1)}
+
+/* wide screens */
+@media (min-width:901px){
+  .hero{min-height:calc(100vh - 160px);display:flex;align-items:center}
+}
+@media (min-width:1200px){
+  .job .card{display:grid;grid-template-columns:240px minmax(0,1fr);gap:8px 36px}
+  .job .top{grid-column:1;flex-direction:column;justify-content:flex-start}
+  .job .main{grid-column:2;grid-row:1 / span 2}
+}
+@media (min-width:1600px){body{font-size:17px}}
+
+@media (max-width:1100px){
+  .three{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .three > :first-child{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .nav .brand span{display:none}
+  .hero{padding-top:40px}
+  .hero .wrap,.about,.contact{grid-template-columns:minmax(0,1fr);gap:40px}
+  .plate-wrap{order:-1;width:min(380px,88%)}
+  .about .body{grid-template-columns:minmax(0,1fr)}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .bento{grid-template-columns:minmax(0,1fr)}
+  .b1,.b2,.b3,.b4,.b5,.b6{grid-column:auto}
+  .b6{grid-template-columns:minmax(0,1fr)}
+  .duties{grid-template-columns:minmax(0,1fr)}
+  .three{grid-template-columns:minmax(0,1fr)}
+  section{padding-block:56px}
+}
+@media (max-width:620px){
+  .nav ul{padding:4px;max-width:calc(100vw - 92px);overflow-x:auto;scrollbar-width:none}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav a.lnk{padding:7px 10px;font-size:13px;white-space:nowrap}
+  .brand{padding:4px}
+  .chip{padding:8px 10px;font-size:12px}
+  .chip b{font-size:20px}
+  .chip.c3{display:none}
+  .job{padding-left:34px}
+  .timeline::before{left:7px}
+  .job::before{left:0}
+  .edu div{grid-template-columns:minmax(0,1fr);gap:2px}
+  .contact{border-radius:28px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .meter i{transform:none}
+}
+</style>
+<script>
+/* apply a saved theme before first paint, and flag JS so reveal effects only hide content when they can show it again */
+(function(){var d=document.documentElement;d.classList.add("js");try{var t=localStorage.getItem("km-theme");if(t==="light"||t==="dark")d.setAttribute("data-theme",t);}catch(e){}})();
+</script>
+</head>
+<body>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>K</i><span>Kwila Mwansa</span></a>
+    <ul>
+      <li><a class="lnk" href="#about">About</a></li>
+      <li><a class="lnk" href="#expertise">Expertise</a></li>
+      <li><a class="lnk" href="#experience">Experience</a></li>
+      <li><a class="lnk" href="#education">Education</a></li>
+      <li><a class="lnk" href="#contact">Contact</a></li>
+      <li><button type="button" class="switch" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span class="knob"></span>
+      </button></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="kicker mono"><span class="dot"></span>Biomedical Scientist · Livingstone, Zambia</p>
+      <h1><span class="row">Kwila Kotati</span><span class="row"><em>Mwansa</em></span></h1>
+      <p class="pitch">I head the microbiology section at <strong>Livingstone University Teaching Hospital</strong>, an antimicrobial resistance surveillance site, and coordinate the Southern Province microbiology teams with UKHSA support.</p>
+      <div class="cta-row">
+        <a class="btn solid" href="mailto:kwilamwansa@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email Kwila</a>
+        <a class="btn soft" href="Kwila_Mwansa_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download CV</a>
+        <a class="btn line" href="tel:+260970761434">+260 970 761 434</a>
+      </div>
+    </div>
+
+    <div class="plate-wrap">
+      <svg class="plate" viewBox="0 0 400 400" role="img" aria-label="Illustration of an antibiotic disc diffusion plate with zones of inhibition around six discs">
+        <defs>
+          <radialGradient id="agar" gradientUnits="userSpaceOnUse" cx="160" cy="140" r="300"><stop offset="0" class="agar-0"/><stop offset="1" class="agar-1"/></radialGradient>
+          <radialGradient id="shine" cx="30%" cy="22%" r="60%"><stop offset="0" stop-color="#fff" stop-opacity=".7"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="7"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.3 1.25"/><feComposite in="SourceGraphic" operator="in"/></filter>
+          <clipPath id="dish"><circle cx="200" cy="200" r="150"/></clipPath>
+          <path id="ringPath" d="M200,200 m-178,0 a178,178 0 1,1 356,0 a178,178 0 1,1 -356,0"/>
+        </defs>
+
+        <circle class="rim" cx="200" cy="200" r="166" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="150" fill="url(#agar)"/>
+        <g clip-path="url(#dish)">
+          <rect class="lawn" x="50" y="50" width="300" height="300" filter="url(#grain)"/>
+        </g>
+        <g clip-path="url(#dish)">
+          <circle class="clear" cx="200" cy="105" r="38" style="animation-delay:0.4s"/>
+          <circle class="clear" cx="282" cy="152" r="30" style="animation-delay:0.6s"/>
+          <circle class="clear" cx="282" cy="248" r="15" style="animation-delay:0.8s"/>
+          <circle class="clear" cx="200" cy="295" r="34" style="animation-delay:1s"/>
+          <circle class="clear" cx="118" cy="248" r="24" style="animation-delay:1.2s"/>
+          <circle class="clear" cx="200" cy="200" r="27" style="animation-delay:1.4s"/>
+          <circle class="zone" cx="200" cy="105" r="38" style="animation-delay:0.4s"/>
+          <circle class="zone" cx="282" cy="152" r="30" style="animation-delay:0.6s"/>
+          <circle class="zone" cx="282" cy="248" r="15" style="animation-delay:0.8s"/>
+          <circle class="zone" cx="200" cy="295" r="34" style="animation-delay:1s"/>
+          <circle class="zone" cx="118" cy="248" r="24" style="animation-delay:1.2s"/>
+          <circle class="zone" cx="200" cy="200" r="27" style="animation-delay:1.4s"/>
+        </g>
+        <g>
+          <circle class="disc" cx="200" cy="105" r="9"/><text class="lbl" x="200" y="108" text-anchor="middle">MEM</text>
+          <circle class="disc" cx="282" cy="152" r="9"/><text class="lbl" x="282" y="155" text-anchor="middle">CIP</text>
+          <circle class="disc" cx="282" cy="248" r="9"/><text class="lbl" x="282" y="251" text-anchor="middle">AMP</text>
+          <circle class="disc" cx="200" cy="295" r="9"/><text class="lbl" x="200" y="298" text-anchor="middle">GEN</text>
+          <circle class="disc" cx="118" cy="248" r="9"/><text class="lbl" x="118" y="251" text-anchor="middle">SXT</text>
+          <circle class="disc" cx="118" cy="152" r="9"/><text class="lbl" x="118" y="155" text-anchor="middle">TET</text>
+          <circle class="disc" cx="200" cy="200" r="9"/><text class="lbl" x="200" y="203" text-anchor="middle">CRO</text>
+        </g>
+        <circle class="shine" cx="200" cy="200" r="150"/>
+        <g class="ring-text"><text class="ring"><textPath href="#ringPath">KIRBY–BAUER DISC DIFFUSION · CLSI M100 · AMR SURVEILLANCE · LIVINGSTONE · </textPath></text></g>
+      </svg>
+      <div class="chip c2"><span class="mono" style="font-size:11px">Head of Microbiology · LUTH</span></div>
+      <div class="chip c1"><b>6+</b> years at<br>the bench</div>
+      <div class="chip c3"><span class="mono" style="font-size:11px">Zone: 28 mm · S</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><b data-count="6" data-suffix="+">6+</b><span>years in clinical laboratories</span></div>
+    <div class="stat"><b data-count="9">9</b><span>laboratory departments rotated</span></div>
+    <div class="stat"><b data-count="2">2</b><span>countries trained in, Zambia and Morocco</span></div>
+    <div class="stat"><b data-count="4">4</b><span>languages spoken</span></div>
+  </div>
+</div>
+
+<div class="marquee" aria-label="Laboratory systems and methods">
+  <div class="track">
+    <span>GeneXpert</span><span>BACTEC</span><span>WHONET</span><span>CLSI guidelines</span><span>DISA</span><span>data2care</span><span>Class II biosafety cabinet</span><span>LQMS</span><span>Method validation</span>
+    <span aria-hidden="true">GeneXpert</span><span aria-hidden="true">BACTEC</span><span aria-hidden="true">WHONET</span><span aria-hidden="true">CLSI guidelines</span><span aria-hidden="true">DISA</span><span aria-hidden="true">data2care</span><span aria-hidden="true">Class II biosafety cabinet</span><span aria-hidden="true">LQMS</span><span aria-hidden="true">Method validation</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="head reveal"><p class="mono">About</p><h2>Precise, curious, <em>dependable</em></h2></div>
+    <div class="reveal">
+      <p class="big">A biomedical scientist who turns <em>bench results</em> into data that shapes antimicrobial resistance policy.</p>
+      <div class="body">
+        <p>I trained at Hassan II University of Casablanca, earning a degree in Biomedical Technologies in 2018. I then rotated through nine departments at the University Teaching Hospital and Levy Mwanawasa University Teaching Hospital in Lusaka.</p>
+        <p>Since 2020 I have led microbiology at Livingstone University Teaching Hospital. I am the Ministry of Health's provincial microbiology focal point and sit on the monitoring and evaluation team for Fleming Fund-supported surveillance sites. I am now studying for a Master of Public Health.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Based in</b> Livingstone</li>
+        <li><b>Focus</b> AMR surveillance</li>
+        <li><b>Studying</b> Master of Public Health</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" class="band">
+  <div class="wrap">
+    <div class="head reveal"><p class="mono">Expertise</p><h2>What I bring to <em>the lab</em></h2></div>
+    <div class="bento">
+      <article class="card b1 reveal">
+        <span class="n mono">01 · Core</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.6"/><circle cx="15" cy="9" r="1"/><circle cx="14" cy="15" r="2"/><circle cx="8.5" cy="15" r=".8"/></svg></div>
+        <h3>Clinical microbiology</h3>
+        <p>Culture, organism identification and antimicrobial susceptibility testing to CLSI guidelines across bacteriology, mycology and parasitology, with storage of significant isolates.</p>
+        <div class="pills"><span>Culture</span><span>Identification</span><span>AST</span><span>Mycology</span><span>Parasitology</span></div>
+      </article>
+      <article class="card b2 reveal">
+        <span class="n mono">02</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 16v-5M11 16V7M16 16v-8M21 16V4"/></svg></div>
+        <h3>AMR surveillance</h3>
+        <p>WHONET data management, monitoring and evaluation of Fleming Fund-supported sites, and reports on findings.</p>
+      </article>
+      <article class="card b3 reveal">
+        <span class="n mono">03</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Quality management</h3>
+        <p>Keeps the section under a Laboratory Quality Management System, writes SOPs and manuals, and validates and verifies methods.</p>
+      </article>
+      <article class="card b4 reveal">
+        <span class="n mono">04</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 18h8M9 18v-3M8 4h4l1 6H7z"/><path d="M10 10v2a4 4 0 0 0 8 0V8"/><path d="M4 21h16"/></svg></div>
+        <h3>Laboratory systems</h3>
+        <p>GeneXpert and BACTEC, the Class II biosafety cabinet and core equipment, plus DISA and data2care for results.</p>
+      </article>
+      <article class="card b5 reveal">
+        <span class="n mono">05</span>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><circle cx="5" cy="17" r="2.5"/><circle cx="19" cy="17" r="2.5"/><path d="M12 8.5v3M12 11.5 6.5 15M12 11.5l5.5 3.5"/></svg></div>
+        <h3>Provincial leadership</h3>
+        <p>Coordinates Southern Province microbiology teams with UKHSA and is the Ministry of Health's provincial focal point.</p>
+      </article>
+      <article class="card b6 reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg></div>
+        <h3>Teaching and mentorship</h3>
+        <p>Lectures and mentors students from several health disciplines, supports their research projects, and trains staff on new techniques through presentations and on-site sessions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="head reveal"><p class="mono">Experience</p><h2>From Casablanca to <em>Livingstone</em></h2></div>
+    <ol class="timeline">
+      <li class="job current reveal">
+        <article class="card">
+          <div class="top"><span class="when mono">May 2020 – Present</span><span class="now">Current role</span></div>
+          <div class="main">
+            <h3>Biomedical Scientist, Head of Microbiology</h3>
+            <p class="org">Livingstone University Teaching Hospital Laboratory</p>
+            <div class="roles"><span>Southern Province coordinator, UKHSA-supported teams</span><span>MoH provincial microbiology focal point</span><span>AMR surveillance M&amp;E team, Fleming Fund</span></div>
+            <ul class="duties">
+              <li>Leads the microbiology section of an AMR surveillance site under a quality management system.</li>
+              <li>Writes and reviews standard operating procedures and section manuals.</li>
+              <li>Processes specimens through macroscopy, microscopy, biochemistry and culture.</li>
+              <li>Identifies organisms and runs susceptibility testing to CLSI guidelines.</li>
+              <li>Operates GeneXpert and BACTEC and maintains core laboratory equipment.</li>
+              <li>Enters and authorises results in data2care, WHONET and DISA, and reports findings.</li>
+              <li>Supports physicians with haematology, immunology, serology and chemistry testing.</li>
+              <li>Lectures and mentors students and trains staff on new techniques.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+      <li class="job reveal">
+        <article class="card">
+          <div class="top"><span class="when mono">Oct 2019 – Mar 2020</span></div>
+          <div class="main">
+            <h3>Biomedical Scientist (Rotation)</h3>
+            <p class="org">University Teaching Hospital, Lusaka</p>
+            <ul><li>Specimen reception, processing, result interpretation and dispatch across TB, virology, chemistry, blood bank, haematology, parasitology, bacteriology, histopathology and outpatient laboratories.</li></ul>
+          </div>
+        </article>
+      </li>
+      <li class="job reveal">
+        <article class="card">
+          <div class="top"><span class="when mono">Nov 2018 – Apr 2019</span></div>
+          <div class="main">
+            <h3>Biomedical Scientist (Rotation)</h3>
+            <p class="org">Levy Mwanawasa University Teaching Hospital, Lusaka</p>
+            <ul><li>The same nine-department rotation, from specimen reception to result dispatch.</li></ul>
+          </div>
+        </article>
+      </li>
+      <li class="job reveal">
+        <article class="card">
+          <div class="top"><span class="when mono">Apr 2018 – Jun 2018</span></div>
+          <div class="main">
+            <h3>Research Placement</h3>
+            <p class="org">Institute of Formation and Techniques, Casablanca, Morocco</p>
+            <ul>
+              <li>Studied how a waste dump site affects environmental and community health.</li>
+              <li>Cultured samples for pathogens, ran chemistry tests and mapped disease by age, sex and type.</li>
+            </ul>
+          </div>
+        </article>
+      </li>
+      <li class="job reveal">
+        <article class="card">
+          <div class="top"><span class="when mono">Jul 2017 – Sep 2017</span></div>
+          <div class="main">
+            <h3>Laboratory Intern, Haematology</h3>
+            <p class="org">CHU Ibn Rochd Hospital Laboratory, Casablanca, Morocco</p>
+            <ul><li>Clinical placement in the haematology department.</li></ul>
+          </div>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="education" class="band">
+  <div class="wrap three">
+    <div class="reveal">
+      <div class="head"><p class="mono">Education</p><h2>Qualifications</h2></div>
+      <div class="edu">
+        <div><span class="yr mono">2023 –</span><p style="margin:0"><b>Master of Public Health</b><span>In progress</span></p></div>
+        <div><span class="yr mono">2018</span><p style="margin:0"><b>Degree in Biomedical Technologies</b><span>Faculty of Sciences and Techniques Mohammedia, Hassan II University of Casablanca</span></p></div>
+        <div><span class="yr mono">2014 – 18</span><p style="margin:0"><b>DEUST in Biology, Chemistry and Geology</b><span>Hassan II University of Casablanca</span></p></div>
+        <div><span class="yr mono">2013 – 14</span><p style="margin:0"><b>French Language Preparatory Programme</b><span>Faculty of Educational Sciences, Morocco</span></p></div>
+        <div><span class="yr mono">2012</span><p style="margin:0"><b>School Certificate</b><span>Kasisi Girls Secondary School, Zambia</span></p></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="head"><p class="mono">Training</p><h2>Certified <em>in</em></h2></div>
+      <ul class="tags">
+        <li>Laboratory Quality Management System</li>
+        <li>Method Validation and Verification</li>
+        <li>DR-TB Management</li>
+        <li>HIV Recency Testing</li>
+        <li>Fire Fighting</li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="head"><p class="mono">Languages</p><h2>Speaks <em>four</em></h2></div>
+      <div class="langs">
+        <div class="lang"><div class="top"><b>English</b><span>Fluent</span></div><div class="meter"><i style="--w:100%"></i></div></div>
+        <div class="lang"><div class="top"><b>Bemba</b><span>Fluent</span></div><div class="meter"><i style="--w:100%"></i></div></div>
+        <div class="lang"><div class="top"><b>Nyanja</b><span>Fluent</span></div><div class="meter"><i style="--w:100%"></i></div></div>
+        <div class="lang"><div class="top"><b>French</b><span>Intermediate</span></div><div class="meter"><i style="--w:55%"></i></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div>
+        <p class="mono">Contact</p>
+        <h2>Let's talk <em>science</em></h2>
+        <p>Open to clinical microbiology, AMR surveillance and public health laboratory roles in Zambia and the region. References are available on request.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:kwilamwansa@gmail.com"><span><small>Email</small>kwilamwansa@gmail.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a href="tel:+260970761434"><span><small>Phone</small>+260 970 761 434</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a href="Kwila_Mwansa_CV.pdf"><span><small>CV</small>Download PDF</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M7 11l5 5 5-5M5 20h14"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Kwila Kotati Mwansa</span><span class="mono">Livingstone · Zambia</span></div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById("theme-toggle");
+  var mq=window.matchMedia("(prefers-color-scheme: dark)");
+  function current(){return root.getAttribute("data-theme")||(mq.matches?"dark":"light");}
+  function render(){
+    var dark=current()==="dark";
+    btn.classList.toggle("is-dark",dark);
+    btn.setAttribute("aria-pressed",String(dark));
+    btn.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
+  }
+  btn.addEventListener("click",function(){
+    var next=current()==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("km-theme",next);}catch(e){}
+    render();
+  });
+  if(mq.addEventListener){mq.addEventListener("change",render);}
+  render();
+
+  // scroll progress bar
+  var bar=document.getElementById("progress");
+  function onScroll(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform="scaleX("+(h>0?scrollY/h:0)+")";}
+  addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+  // reveal, count-up and active nav link
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items=document.querySelectorAll(".reveal");
+  function countUp(el){
+    var end=+el.dataset.count, suf=el.dataset.suffix||"", t0=null;
+    if(reduce){el.textContent=end+suf;return;}
+    function step(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  }
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      e.target.classList.add("in");
+      e.target.querySelectorAll("[data-count]").forEach(countUp);
+      io.unobserve(e.target);
+    });},{threshold:.15,rootMargin:"0px 0px -40px 0px"});
+    items.forEach(function(el){io.observe(el);});
+    var links={};document.querySelectorAll(".nav a.lnk").forEach(function(a){links[a.getAttribute("href").slice(1)]=a;});
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){
+      var a=links[e.target.id];if(a&&e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.remove("on");});a.classList.add("on");}
+    });},{rootMargin:"-45% 0px -50% 0px"});
+    Object.keys(links).forEach(function(id){var s=document.getElementById(id);if(s)spy.observe(s);});
+  }else{items.forEach(function(el){el.classList.add("in");});}
+
+  // spotlight that follows the pointer on cards
+  document.querySelectorAll(".card").forEach(function(c){
+    c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px");});
+  });
+})();
+</script>
+</body>
+</html>
